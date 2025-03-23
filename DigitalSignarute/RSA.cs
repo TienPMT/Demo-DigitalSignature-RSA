@@ -255,25 +255,25 @@ namespace DigitalSignarute
             return m.ToString("X"); // Chuyển đổi sang chuỗi hex
         }
 
-        //// Xác thực chữ ký số
-        //public bool xacThucChuKy(string DuLieuXacMinh, string ChuKySo)
-        //{
-        //    try
-        //    {
-        //        // Băm lại dữ liệu cần xác minh (trả về string)
-        //        string hashedData = HashData(DuLieuXacMinh);
+        // Xác thực chữ ký số
+        public bool xacThucChuKy(string DuLieuXacMinh, string ChuKySo)
+        {
+            try
+            {
+                // Băm lại dữ liệu cần xác minh (trả về string)
+                string hashedData = HashData(DuLieuXacMinh);
 
-        //        // Giải mã chữ ký số để lấy giá trị băm gốc (trả về string)
-        //        string decryptedHash = giaiMaChuKySo(ChuKySo);
+                // Giải mã chữ ký số để lấy giá trị băm gốc (trả về string)
+                string decryptedHash = giaiMaChuKySo(ChuKySo);
 
-        //        // So sánh hai giá trị băm
-        //        return hashedData == decryptedHash;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception("Lỗi xác thực chữ ký: " + ex.Message);
-        //    }
-        //}
+                // So sánh hai giá trị băm
+                return hashedData == decryptedHash;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi xác thực chữ ký: " + ex.Message);
+            }
+        }
 
     }
 }

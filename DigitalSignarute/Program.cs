@@ -7,8 +7,10 @@ using System.Windows.Forms;
 
 namespace DigitalSignarute
 {
+
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
             Application.EnableVisualStyles();

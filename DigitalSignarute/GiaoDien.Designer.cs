@@ -55,7 +55,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtChuKySo = new System.Windows.Forms.TextBox();
             this.btnKySo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCopy = new System.Windows.Forms.Button();
             this.btnXacMinh = new System.Windows.Forms.Button();
             this.txtChuKySoXacMinh = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -315,6 +315,7 @@
             this.txtChuKySo.Name = "txtChuKySo";
             this.txtChuKySo.Size = new System.Drawing.Size(320, 20);
             this.txtChuKySo.TabIndex = 30;
+            this.txtChuKySo.TextChanged += new System.EventHandler(this.txtChuKySo_TextChanged);
             // 
             // btnKySo
             // 
@@ -326,14 +327,15 @@
             this.btnKySo.UseVisualStyleBackColor = true;
             this.btnKySo.Click += new System.EventHandler(this.btnKySo_Click);
             // 
-            // button1
+            // btnCopy
             // 
-            this.button1.Location = new System.Drawing.Point(684, 278);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 31);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Copy";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCopy.Location = new System.Drawing.Point(684, 278);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(95, 31);
+            this.btnCopy.TabIndex = 32;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // btnXacMinh
             // 
@@ -472,7 +474,7 @@
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtNhapXacMinh);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.btnKySo);
             this.Controls.Add(this.txtChuKySo);
             this.Controls.Add(this.label13);
@@ -537,7 +539,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtChuKySo;
         private System.Windows.Forms.Button btnKySo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCopy;
         private System.Windows.Forms.Button btnXacMinh;
         private System.Windows.Forms.TextBox txtChuKySoXacMinh;
         private System.Windows.Forms.Label label14;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace DigitalSignarute
 {
@@ -83,6 +84,9 @@ namespace DigitalSignarute
                 txtPhiN.Text = rsa.Phi_n_test.ToString();
                 txtE.Text = rsa.E_test.ToString();
                 txtD.Text = rsa.D_test.ToString();
+
+                txtPrivate.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.E_test.ToString());
+                txtPublic.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.D_test.ToString());
             }
             catch (Exception ex)
             {
@@ -168,11 +172,9 @@ namespace DigitalSignarute
 
             // Băm lại dữ liệu cần xác minh
             string hashedData = rsa.HashData(inputText);
-            Console.WriteLine("Giá trị băm xác minh: " + hashedData); // In ra giá trị băm xác minh
 
             // Giải mã chữ ký số
             string decryptedHash = rsa.giaiMaChuKySo(digitalSignature);
-            Console.WriteLine("Giá trị băm giải mã: " + decryptedHash); // In ra giá trị băm giải mã
 
             // So sánh hai giá trị băm
             if (hashedData == decryptedHash)
@@ -188,6 +190,19 @@ namespace DigitalSignarute
         private void txtChuKySoXacMinh_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+
+        private void txtChuKySo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
