@@ -63,12 +63,12 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtNhapXacMinh = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.txtKetQuaGiaiMa = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.btnBamXacMinh = new System.Windows.Forms.Button();
-            this.txtGiaiMaChuKySo = new System.Windows.Forms.Button();
+            this.txtGiaiMaChuKySo = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnGiaiMa = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -89,7 +89,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(22, 77);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 16);
+            this.label4.Size = new System.Drawing.Size(148, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Số nguyên tố bí mật p = ";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -100,7 +100,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(22, 120);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(149, 16);
+            this.label5.Size = new System.Drawing.Size(148, 16);
             this.label5.TabIndex = 5;
             this.label5.Text = "Số nguyên tố bí mật q = ";
             this.label5.Click += new System.EventHandler(this.label5_Click);
@@ -111,7 +111,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(22, 237);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 16);
+            this.label2.Size = new System.Drawing.Size(117, 16);
             this.label2.TabIndex = 8;
             this.label2.Text = "Hàm số Ơle Ф(n) =";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -139,7 +139,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(22, 194);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 16);
+            this.label3.Size = new System.Drawing.Size(78, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Modulus n =";
             // 
@@ -186,7 +186,7 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(22, 361);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 16);
+            this.label6.Size = new System.Drawing.Size(124, 16);
             this.label6.TabIndex = 16;
             this.label6.Text = "Khóa private (n, e) =";
             // 
@@ -196,7 +196,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(22, 401);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 16);
+            this.label7.Size = new System.Drawing.Size(119, 16);
             this.label7.TabIndex = 17;
             this.label7.Text = "Khóa public (n, d) =";
             // 
@@ -206,7 +206,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(22, 284);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(128, 16);
+            this.label8.Size = new System.Drawing.Size(127, 16);
             this.label8.TabIndex = 18;
             this.label8.Text = "Số mũ công khai e =";
             // 
@@ -216,7 +216,7 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(22, 321);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 16);
+            this.label9.Size = new System.Drawing.Size(105, 16);
             this.label9.TabIndex = 19;
             this.label9.Text = "Số mũ bí mật d =";
             // 
@@ -267,7 +267,7 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(368, 78);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 16);
+            this.label11.Size = new System.Drawing.Size(74, 16);
             this.label11.TabIndex = 25;
             this.label11.Text = "Dữ liệu gốc";
             this.label11.Click += new System.EventHandler(this.label11_Click);
@@ -287,7 +287,7 @@
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.Location = new System.Drawing.Point(368, 217);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(147, 16);
+            this.label12.Size = new System.Drawing.Size(146, 16);
             this.label12.TabIndex = 27;
             this.label12.Text = "Kết quả băm (SHA-256)";
             this.label12.Click += new System.EventHandler(this.label12_Click);
@@ -305,7 +305,7 @@
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.Location = new System.Drawing.Point(368, 263);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(66, 16);
+            this.label13.Size = new System.Drawing.Size(65, 16);
             this.label13.TabIndex = 29;
             this.label13.Text = "Chữ ký số";
             // 
@@ -360,7 +360,7 @@
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.Location = new System.Drawing.Point(813, 263);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(66, 16);
+            this.label14.Size = new System.Drawing.Size(65, 16);
             this.label14.TabIndex = 37;
             this.label14.Text = "Chữ ký số";
             // 
@@ -378,7 +378,7 @@
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.Location = new System.Drawing.Point(813, 217);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(147, 16);
+            this.label15.Size = new System.Drawing.Size(146, 16);
             this.label15.TabIndex = 35;
             this.label15.Text = "Kết quả băm (SHA-256)";
             // 
@@ -396,27 +396,9 @@
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(813, 78);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(129, 16);
+            this.label16.Size = new System.Drawing.Size(128, 16);
             this.label16.TabIndex = 33;
             this.label16.Text = "Dữ liệu cần xác minh";
-            // 
-            // txtKetQuaGiaiMa
-            // 
-            this.txtKetQuaGiaiMa.Location = new System.Drawing.Point(803, 338);
-            this.txtKetQuaGiaiMa.Name = "txtKetQuaGiaiMa";
-            this.txtKetQuaGiaiMa.Size = new System.Drawing.Size(320, 20);
-            this.txtKetQuaGiaiMa.TabIndex = 41;
-            this.txtKetQuaGiaiMa.TextChanged += new System.EventHandler(this.txtKetQuaGiaiMa_TextChanged);
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(813, 317);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(113, 16);
-            this.label17.TabIndex = 40;
-            this.label17.Text = "Giải mã chữ ký số";
             // 
             // button2
             // 
@@ -448,25 +430,44 @@
             // 
             // txtGiaiMaChuKySo
             // 
-            this.txtGiaiMaChuKySo.Location = new System.Drawing.Point(1129, 276);
+            this.txtGiaiMaChuKySo.Location = new System.Drawing.Point(803, 337);
             this.txtGiaiMaChuKySo.Name = "txtGiaiMaChuKySo";
-            this.txtGiaiMaChuKySo.Size = new System.Drawing.Size(95, 33);
-            this.txtGiaiMaChuKySo.TabIndex = 45;
-            this.txtGiaiMaChuKySo.Text = "Giải mã chữ ký";
-            this.txtGiaiMaChuKySo.UseVisualStyleBackColor = true;
-            this.txtGiaiMaChuKySo.Click += new System.EventHandler(this.txtGiaiMaChuKySo_Click);
+            this.txtGiaiMaChuKySo.Size = new System.Drawing.Size(320, 20);
+            this.txtGiaiMaChuKySo.TabIndex = 46;
+            this.txtGiaiMaChuKySo.TextChanged += new System.EventHandler(this.txtGiaiMaChuKySo_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(813, 316);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(112, 16);
+            this.label17.TabIndex = 45;
+            this.label17.Text = "Giải mã chữ ký số";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // btnGiaiMa
+            // 
+            this.btnGiaiMa.Location = new System.Drawing.Point(1129, 276);
+            this.btnGiaiMa.Name = "btnGiaiMa";
+            this.btnGiaiMa.Size = new System.Drawing.Size(95, 33);
+            this.btnGiaiMa.TabIndex = 47;
+            this.btnGiaiMa.Text = "Giải mã";
+            this.btnGiaiMa.UseVisualStyleBackColor = true;
+            this.btnGiaiMa.Click += new System.EventHandler(this.btnGiaiMa_Click);
             // 
             // GiaoDien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1247, 443);
+            this.Controls.Add(this.btnGiaiMa);
             this.Controls.Add(this.txtGiaiMaChuKySo);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.btnBamXacMinh);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.txtKetQuaGiaiMa);
-            this.Controls.Add(this.label17);
             this.Controls.Add(this.btnXacMinh);
             this.Controls.Add(this.txtChuKySoXacMinh);
             this.Controls.Add(this.label14);
@@ -547,11 +548,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNhapXacMinh;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txtKetQuaGiaiMa;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btnBamXacMinh;
-        private System.Windows.Forms.Button txtGiaiMaChuKySo;
+        private System.Windows.Forms.TextBox txtGiaiMaChuKySo;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnGiaiMa;
     }
 }

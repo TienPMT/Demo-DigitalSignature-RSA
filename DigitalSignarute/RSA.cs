@@ -225,55 +225,89 @@ namespace DigitalSignarute
             return BitConverter.ToString(data).Replace("-", "").ToLower();
         }
 
+        // "Hàm lấy mod"
+        public int RSA_mod(int mx, int ex, int nx)
+        {
+
+            //Sử dụng thuật toán "bình phương nhân"
+            //Chuyển e sang hệ nhị phân
+            int[] a = new int[100];
+            int k = 0;
+            do
+            {
+                a[k] = ex % 2;
+                k++;
+                ex = ex / 2;
+            }
+            while (ex != 0);
+            //Quá trình lấy dư
+            int kq = 1;
+            for (int i = k - 1; i >= 0; i--)
+            {
+                kq = (kq * kq) % nx;
+                if (a[i] == 1)
+                    kq = (kq * mx) % nx;
+            }
+            return kq;
+        }
 
         // Tạo chữ ký số
         public string taoChuKy(string dulieubam)
         {
-            // Chuyển đổi giá trị băm từ string sang BigInteger
-            BigInteger m = BigInteger.Parse(dulieubam, System.Globalization.NumberStyles.HexNumber);
+            // Chuyển đổi giá trị băm từ string sang mảng byte
+            byte[] hashBytes = Convert.FromBase64String(dulieubam);
 
-            // Tính chữ ký số: c = m^d mod n
-            BigInteger c = BigInteger.ModPow(m, D_test, N_test);
+            // Mã hóa giá trị băm bằng khóa riêng d
+            int[] encryptedHash = new int[hashBytes.Length];
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                encryptedHash[i] = RSA_mod(hashBytes[i], D_test, N_test); // mã hóa
+            }
 
-            // Trả về chữ ký số dưới dạng chuỗi hex
-            return c.ToString("X"); // Chuyển đổi sang chuỗi hex
+            // Chuyển đổi mảng int thành byte[]
+            byte[] signatureBytes = new byte[encryptedHash.Length];
+            for (int i = 0; i < encryptedHash.Length; i++)
+            {
+                signatureBytes[i] = (byte)encryptedHash[i];
+            }
+
+            // Trả về chữ ký số dưới dạng Base64
+            return Convert.ToBase64String(signatureBytes);
         }
 
-        // Giải mã chữ ký số bằng khóa public, trả về chuỗi dữ liệu băm gốc
-        public string giaiMaChuKySo(string ChuKySo)
+        // Hàm giải mã chữ ký số
+        public string giaiMaChuKy(string ChuKySo)
         {
-            if (string.IsNullOrEmpty(ChuKySo))
-                throw new ArgumentException("Chữ ký số không được để trống!");
+            // Giải mã chữ ký số bằng khóa công khai
+            byte[] signatureBytes = Convert.FromBase64String(ChuKySo);
+            int[] decryptedHash = new int[signatureBytes.Length];
+            for (int i = 0; i < signatureBytes.Length; i++)
+            {
+                decryptedHash[i] = RSA_mod(signatureBytes[i], E_test, N_test); // giải mã
+            }
 
-            // Chuyển đổi chữ ký số từ chuỗi hex sang BigInteger
-            BigInteger c = BigInteger.Parse(ChuKySo, System.Globalization.NumberStyles.HexNumber);
+            // Chuyển đổi mảng int thành byte[]
+            byte[] decryptedHashBytes = new byte[decryptedHash.Length];
+            for (int i = 0; i < decryptedHash.Length; i++)
+            {
+                decryptedHashBytes[i] = (byte)decryptedHash[i];
+            }
 
-            // Tính toán giá trị băm gốc: m = c^e mod n
-            BigInteger m = BigInteger.ModPow(c, E_test, N_test);
-
-            // Trả về giá trị băm dưới dạng chuỗi hex
-            return m.ToString("X"); // Chuyển đổi sang chuỗi hex
+            // Trả về giá trị băm dưới dạng chuỗi Base64
+            return Convert.ToBase64String(decryptedHashBytes);
         }
 
-        // Xác thực chữ ký số
+        // Hàm xác thực chữ ký số
         public bool xacThucChuKy(string DuLieuXacMinh, string ChuKySo)
         {
-            try
-            {
-                // Băm lại dữ liệu cần xác minh (trả về string)
-                string hashedData = HashData(DuLieuXacMinh);
+            // Băm lại dữ liệu cần xác minh
+            string hashedData = HashData(DuLieuXacMinh);
 
-                // Giải mã chữ ký số để lấy giá trị băm gốc (trả về string)
-                string decryptedHash = giaiMaChuKySo(ChuKySo);
+            // Giải mã chữ ký số để lấy giá trị băm gốc
+            string decryptedHashString = giaiMaChuKy(ChuKySo);
 
-                // So sánh hai giá trị băm
-                return hashedData == decryptedHash;
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Lỗi xác thực chữ ký: " + ex.Message);
-            }
+            // So sánh hai giá trị băm
+            return hashedData == decryptedHashString;
         }
-
     }
 }

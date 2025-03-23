@@ -151,39 +151,29 @@ namespace DigitalSignarute
             txtBamXacMinh.Text = hashedDataCheck;
         }
 
-        private void txtKetQuaGiaiMa_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void txtGiaiMaChuKySo_Click(object sender, EventArgs e)
-        {
-            string inputText = txtChuKySoXacMinh.Text;
-
-            // Giải mã chữ ký số bằng khóa public
-            string digitalSignature = rsa.giaiMaChuKySo(inputText);
-
-            txtKetQuaGiaiMa.Text = digitalSignature;
-        }
-
         private void btnXacMinh_Click(object sender, EventArgs e)
         {
-            string inputText = txtNhapXacMinh.Text;
-            string digitalSignature = txtChuKySoXacMinh.Text;
+            string inputText = txtNhapXacMinh.Text; // Dữ liệu cần xác minh
+            string digitalSignature = txtChuKySoXacMinh.Text; // Chữ ký số
 
-            // Băm lại dữ liệu cần xác minh
-            string hashedData = rsa.HashData(inputText);
-
-            // Giải mã chữ ký số
-            string decryptedHash = rsa.giaiMaChuKySo(digitalSignature);
-
-            // So sánh hai giá trị băm
-            if (hashedData == decryptedHash)
+            try
             {
-                MessageBox.Show("Chữ ký số hợp lệ!");
+                // Xác thực chữ ký số
+                bool isValid = rsa.xacThucChuKy(inputText, digitalSignature);
+
+                // Hiển thị kết quả xác thực
+                if (isValid)
+                {
+                    MessageBox.Show("Chữ ký số hợp lệ!");
+                }
+                else
+                {
+                    MessageBox.Show("Chữ ký số không hợp lệ!");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Chữ ký số không hợp lệ!");
+                MessageBox.Show("Lỗi xác thực: " + ex.Message);
             }
         }
 
@@ -198,11 +188,45 @@ namespace DigitalSignarute
         }
 
 
-
-
         private void txtChuKySo_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtGiaiMaChuKySo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGiaiMa_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Đã thay ChuKySoXacMinh thành ChuKySo để kiểm tra
+                string inputText = txtChuKySo.Text;
+
+                // Kiểm tra xem inputText có rỗng hay không
+                if (string.IsNullOrEmpty(inputText))
+                {
+                    MessageBox.Show("Chữ ký số không được để trống!");
+                    return;
+                }
+
+                // Giải mã chữ ký số
+                string decryptedValue = rsa.giaiMaChuKy(inputText);
+
+                // Hiển thị giá trị đã giải mã
+                txtGiaiMaChuKySo.Text = decryptedValue;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi giải mã: " + ex.Message);
+            }
         }
     }
 }

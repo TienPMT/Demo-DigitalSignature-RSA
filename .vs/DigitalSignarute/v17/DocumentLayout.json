@@ -1,0 +1,87 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{35BDC1CA-F4E6-4CD9-B846-3E4D79A3E6D6}|DigitalSignarute\\DigitalSignarute.csproj|e:\\desktop\\ti\u1EBFn\\huit\\n\u0103m 2\\h\u1ECDc k\u00EC 2\\2. b\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\baocao\\digitalsignature\\digitalsignarute\\digitalsignarute\\giaodien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{35BDC1CA-F4E6-4CD9-B846-3E4D79A3E6D6}|DigitalSignarute\\DigitalSignarute.csproj|solutionrelative:digitalsignarute\\giaodien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35BDC1CA-F4E6-4CD9-B846-3E4D79A3E6D6}|DigitalSignarute\\DigitalSignarute.csproj|E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\digitalsignarute\\rsa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35BDC1CA-F4E6-4CD9-B846-3E4D79A3E6D6}|DigitalSignarute\\DigitalSignarute.csproj|solutionrelative:digitalsignarute\\rsa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35BDC1CA-F4E6-4CD9-B846-3E4D79A3E6D6}|DigitalSignarute\\DigitalSignarute.csproj|e:\\desktop\\ti\u1EBFn\\huit\\n\u0103m 2\\h\u1ECDc k\u00EC 2\\2. b\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\baocao\\digitalsignature\\digitalsignarute\\digitalsignarute\\giaodien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35BDC1CA-F4E6-4CD9-B846-3E4D79A3E6D6}|DigitalSignarute\\DigitalSignarute.csproj|solutionrelative:digitalsignarute\\giaodien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{35BDC1CA-F4E6-4CD9-B846-3E4D79A3E6D6}|DigitalSignarute\\DigitalSignarute.csproj|e:\\desktop\\ti\u1EBFn\\huit\\n\u0103m 2\\h\u1ECDc k\u00EC 2\\2. b\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\baocao\\digitalsignature\\digitalsignarute\\digitalsignarute\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{35BDC1CA-F4E6-4CD9-B846-3E4D79A3E6D6}|DigitalSignarute\\DigitalSignarute.csproj|solutionrelative:digitalsignarute\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GiaoDien.cs [Design]",
+              "DocumentMoniker": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\DigitalSignarute\\GiaoDien.cs",
+              "RelativeDocumentMoniker": "DigitalSignarute\\GiaoDien.cs",
+              "ToolTip": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\DigitalSignarute\\GiaoDien.cs [Design]",
+              "RelativeToolTip": "DigitalSignarute\\GiaoDien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:48:35.004Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GiaoDien.cs",
+              "DocumentMoniker": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\DigitalSignarute\\GiaoDien.cs",
+              "RelativeDocumentMoniker": "DigitalSignarute\\GiaoDien.cs",
+              "ToolTip": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\DigitalSignarute\\GiaoDien.cs",
+              "RelativeToolTip": "DigitalSignarute\\GiaoDien.cs",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAuwNUAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:48:59.006Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RSA.cs",
+              "DocumentMoniker": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\DigitalSignarute\\RSA.cs",
+              "RelativeDocumentMoniker": "DigitalSignarute\\RSA.cs",
+              "ToolTip": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\DigitalSignarute\\RSA.cs",
+              "RelativeToolTip": "DigitalSignarute\\RSA.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAQwKgAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:39:44.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\DigitalSignarute\\Program.cs",
+              "RelativeDocumentMoniker": "DigitalSignarute\\Program.cs",
+              "ToolTip": "E:\\Desktop\\Ti\u1EBFn\\HUIT\\N\u0103m 2\\H\u1ECDc k\u00EC 2\\2. B\u1EA3o m\u1EADt m\u00E1y t\u00EDnh\\BaoCao\\DigitalSignature\\DigitalSignarute\\DigitalSignarute\\Program.cs",
+              "RelativeToolTip": "DigitalSignarute\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-23T04:48:22.532Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
