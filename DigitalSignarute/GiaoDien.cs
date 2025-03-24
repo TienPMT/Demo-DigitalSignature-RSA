@@ -208,7 +208,7 @@ namespace DigitalSignarute
             try
             {
                 // Đã thay ChuKySoXacMinh thành ChuKySo để kiểm tra
-                string inputText = txtChuKySo.Text;
+                string inputText = txtChuKySoXacMinh.Text;
 
                 // Kiểm tra xem inputText có rỗng hay không
                 if (string.IsNullOrEmpty(inputText))
