@@ -64,8 +64,8 @@ namespace DigitalSignarute
             txtE.Text = rsa.E_test.ToString();
             txtD.Text = rsa.D_test.ToString();
 
-            txtPrivate.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.E_test.ToString());
-            txtPublic.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.D_test.ToString());
+            txtPrivate.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.D_test.ToString());
+            txtPublic.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.E_test.ToString());
         }
 
         private void btnTinhToan_Click(object sender, EventArgs e) // Tạo khóa từ giá trị nhập từ bàn phímm
@@ -85,8 +85,8 @@ namespace DigitalSignarute
                 txtE.Text = rsa.E_test.ToString();
                 txtD.Text = rsa.D_test.ToString();
 
-                txtPrivate.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.E_test.ToString());
-                txtPublic.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.D_test.ToString());
+                txtPrivate.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.D_test.ToString());
+                txtPublic.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.E_test.ToString());
             }
             catch (Exception ex)
             {
@@ -184,7 +184,7 @@ namespace DigitalSignarute
 
         private void btnCopy_Click(object sender, EventArgs e)
         {
-            
+            Clipboard.SetText(txtChuKySo.Text);
         }
 
 
@@ -205,12 +205,10 @@ namespace DigitalSignarute
 
         private void btnGiaiMa_Click(object sender, EventArgs e)
         {
+            string inputText = txtChuKySoXacMinh.Text;
+
             try
             {
-                // Đã thay ChuKySoXacMinh thành ChuKySo để kiểm tra
-                string inputText = txtChuKySoXacMinh.Text;
-
-                // Kiểm tra xem inputText có rỗng hay không
                 if (string.IsNullOrEmpty(inputText))
                 {
                     MessageBox.Show("Chữ ký số không được để trống!");
@@ -227,6 +225,11 @@ namespace DigitalSignarute
             {
                 MessageBox.Show("Lỗi giải mã: " + ex.Message);
             }
+        }
+
+        private void txtPrivate_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

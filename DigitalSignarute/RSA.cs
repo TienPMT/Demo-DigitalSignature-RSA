@@ -19,7 +19,8 @@ namespace DigitalSignarute
         public int P_test
         {
             get { return p; }
-            set {
+            set
+            {
                 if (!(kt_SoNguyenTo(value))) // Nếu không phải số nguyên tố, throw ra lỗi -> Catch
                     throw new Exception("p không phải số nguyên tố!");
 
@@ -31,7 +32,8 @@ namespace DigitalSignarute
         public int Q_test
         {
             get { return q; }
-            set {
+            set
+            {
                 if (!(kt_SoNguyenTo(value))) // Nếu không phải số nguyên tố, throw ra lỗi -> Catch
                     throw new Exception("q không phải số nguyên tố!");
                 if (value == p)
@@ -70,11 +72,11 @@ namespace DigitalSignarute
         // Không tham số (random)
         public RSA()
         {
-            
-            P_test = random_SoNguyenTo(20, 1000);
+
+            P_test = random_SoNguyenTo(20, 100);
             do
             {
-                Q_test = random_SoNguyenTo(20, 1000);
+                Q_test = random_SoNguyenTo(20, 100);
             } while (P_test == Q_test); // Tránh trường hợp P và Q trùng nhau
 
             TinhToan(); // Tính 2 giá trị n và phi(n)
@@ -153,7 +155,7 @@ namespace DigitalSignarute
         private void TimE()
         {
             // List các phần tử số nguyên tố thường được chọn làm e
-            int[] danhSachE = { 65537, 3, 5, 17, 257};
+            int[] danhSachE = { 65537, 3, 5, 17, 257 };
             foreach (int n in danhSachE)
             {
                 // Tìm e sao cho e là số nguyên tố cùng nhau với Phi_n (có ước chung lớn nhất là 1)
@@ -211,26 +213,11 @@ namespace DigitalSignarute
             }
         }
 
-        // Hàm chuyển string sang byte[] để in màn hình
-        public byte[] String_To_Byte(string hex)
-        {
-            return Enumerable.Range(0, hex.Length / 2)
-                             .Select(x => Convert.ToByte(hex.Substring(x * 2, 2), 16))
-                             .ToArray();
-        }
-
-        // Hàm chuyển byte[] sang string (hex)
-        public string Byte_To_String(byte[] data)
-        {
-            return BitConverter.ToString(data).Replace("-", "").ToLower();
-        }
-
         // "Hàm lấy mod"
         public int RSA_mod(int mx, int ex, int nx)
         {
-
-            //Sử dụng thuật toán "bình phương nhân"
-            //Chuyển e sang hệ nhị phân
+            // Sử dụng thuật toán "bình phương nhân"
+            // Chuyển ex sang hệ nhị phân
             int[] a = new int[100];
             int k = 0;
             do
@@ -240,108 +227,69 @@ namespace DigitalSignarute
                 ex = ex / 2;
             }
             while (ex != 0);
-            //Quá trình lấy dư
+
+            // Quá trình lấy dư
             int kq = 1;
             for (int i = k - 1; i >= 0; i--)
             {
                 kq = (kq * kq) % nx;
                 if (a[i] == 1)
+                {
                     kq = (kq * mx) % nx;
+                }
             }
+
+            // Đảm bảo giá trị trả về nằm trong khoảng cho phép
+            if (kq < 0)
+            {
+                kq += nx;
+            }
+
             return kq;
         }
 
-        // Tạo chữ ký số
-        //public string taoChuKy(string dulieubam)
-        //{
-        //    // Chuyển đổi giá trị băm từ string sang mảng byte
-        //    byte[] hashBytes = Convert.FromBase64String(dulieubam);
-
-        //    // Mã hóa giá trị băm bằng khóa riêng d
-        //    int[] encryptedHash = new int[hashBytes.Length];
-        //    for (int i = 0; i < hashBytes.Length; i++)
-        //    {
-        //        encryptedHash[i] = RSA_mod(hashBytes[i], D_test, N_test); // mã hóa
-        //    }
-
-        //    // Chuyển đổi mảng int thành byte[]
-        //    byte[] signatureBytes = new byte[encryptedHash.Length];
-        //    for (int i = 0; i < encryptedHash.Length; i++)
-        //    {
-        //        signatureBytes[i] = (byte)encryptedHash[i];
-        //    }
-
-        //    // Trả về chữ ký số dưới dạng Base64
-        //    return Convert.ToBase64String(signatureBytes);
-        //}
-
-        public string taoChuKy(string dulieubam)
+        public string taoChuKy(string ChuoiVao)
         {
-            // Chuyển dữ liệu sang byte Unicode và mã hóa Base64
-            byte[] mh_temp1 = Encoding.Unicode.GetBytes(dulieubam);
-            string base64 = Convert.ToBase64String(mh_temp1);
 
-            // Mã hóa từng ký tự Base64 bằng RSA
-            int[] mh_temp3 = new int[base64.Length];
-            for (int i = 0; i < base64.Length; i++)
+            // Chuyển chuỗi vào thành mảng các ký tự
+            int[] mh_temp2 = ChuoiVao.Select(c => (int)c).ToArray();
+
+            // Mảng chứa các ký tự đã mã hóa
+            int[] mh_temp3 = new int[mh_temp2.Length];
+            for (int i = 0; i < mh_temp2.Length; i++)
             {
-                int asciiValue = (int)base64[i];
-                mh_temp3[i] = RSA_mod(asciiValue, E_test, N_test);
+                mh_temp3[i] = RSA_mod(mh_temp2[i], D_test, N_test); // mã hóa
             }
 
-            // Chuyển mảng int sang byte[] và trả về dạng Base64
-            byte[] byteResult = new byte[mh_temp3.Length * sizeof(int)];
-            Buffer.BlockCopy(mh_temp3, 0, byteResult, 0, byteResult.Length);
-            return Convert.ToBase64String(byteResult);
+            // Chuyển mảng đã mã hóa thành chuỗi
+            string str = new string(mh_temp3.Select(c => (char)c).ToArray());
+
+            // Trả về chuỗi đã mã hóa dưới dạng Base64
+            return Convert.ToBase64String(Encoding.UTF8.GetBytes(str));
         }
 
-        // Hàm giải mã chữ ký số
-        //public string giaiMaChuKy(string ChuKySo)
-        //{
-        //    // Giải mã chữ ký số bằng khóa công khai
-        //    byte[] signatureBytes = Convert.FromBase64String(ChuKySo);
-        //    int[] decryptedHash = new int[signatureBytes.Length];
-        //    for (int i = 0; i < signatureBytes.Length; i++)
-        //    {
-        //        decryptedHash[i] = RSA_mod(signatureBytes[i], E_test, N_test); // giải mã
-        //    }
-
-        //    // Chuyển đổi mảng int thành byte[]
-        //    byte[] decryptedHashBytes = new byte[decryptedHash.Length];
-        //    for (int i = 0; i < decryptedHash.Length; i++)
-        //    {
-        //        decryptedHashBytes[i] = (byte)decryptedHash[i];
-        //    }
-
-        //    // Trả về giá trị băm dưới dạng chuỗi Base64
-        //    return Convert.ToBase64String(decryptedHashBytes);
-        //}
-        public string giaiMaChuKy(string ChuKySo)
+        // hàm giải mã
+        public string giaiMaChuKy(string ChuoiVao)
         {
-            // 1. Chuyển chuỗi ký tự thành dữ liệu nhị phân
-            byte[] byteMaHoa = Convert.FromBase64String(ChuKySo);
+            // Giải mã chuỗi từ Base64
+            byte[] temp2 = Convert.FromBase64String(ChuoiVao);
+            string giaima = Encoding.UTF8.GetString(temp2);
 
-            // 2. Khôi phục mảng số nguyên từ byte[]
-            int[] mangMaHoa = new int[byteMaHoa.Length / sizeof(int)];
-            Buffer.BlockCopy(byteMaHoa, 0, mangMaHoa, 0, byteMaHoa.Length);
+            // Chuyển chuỗi giải mã thành mảng các ký tự
+            int[] b = giaima.Select(nd => (int)nd).ToArray();
 
-            // 3. Giải mã từng phần tử
-            int[] ketQuaGiaiMa = new int[mangMaHoa.Length];
-            for (int i = 0; i < mangMaHoa.Length; i++)
+            // Mảng chứa các ký tự đã giải mã
+            int[] c = new int[b.Length];
+            for (int i = 0; i < b.Length; i++)
             {
-                ketQuaGiaiMa[i] = RSA_mod(mangMaHoa[i], D_test, N_test);
+                c[i] = RSA_mod(b[i], E_test, N_test); // giải mã
             }
 
-            // 4. Chuyển về chuỗi Base64 gốc
-            char[] kyTuBase64 = new char[ketQuaGiaiMa.Length];
-            for (int i = 0; i < ketQuaGiaiMa.Length; i++)
-            {
-                kyTuBase64[i] = (char)ketQuaGiaiMa[i];
-            }
+            // Chuyển mảng đã giải mã thành chuỗi
+            string str = new string(c.Select(ch => (char)ch).ToArray());
 
-            // 5. Giải mã dữ liệu cuối cùng
-            byte[] duLieuGoc = Convert.FromBase64String(new string(kyTuBase64));
-            return Encoding.Unicode.GetString(duLieuGoc);
+            // Trả về chuỗi đã giải mã
+            return str;
         }
 
         // Hàm xác thực chữ ký số
