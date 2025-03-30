@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace DigitalSignarute
 {
@@ -56,16 +57,23 @@ namespace DigitalSignarute
 
         private void btnRandom_Click_Click(object sender, EventArgs e) // Tạo khóa từ giá trị ngẫu nhiên
         {
-            rsa = new RSA();
-            txtP.Text = rsa.P_test.ToString();
-            txtQ.Text = rsa.Q_test.ToString();
-            txtN.Text = rsa.N_test.ToString();
-            txtPhiN.Text = rsa.Phi_n_test.ToString();
-            txtE.Text = rsa.E_test.ToString();
-            txtD.Text = rsa.D_test.ToString();
+            try
+            {
+                rsa = new RSA();
+                txtP.Text = rsa.P_test.ToString();
+                txtQ.Text = rsa.Q_test.ToString();
+                txtN.Text = rsa.N_test.ToString();
+                txtPhiN.Text = rsa.Phi_n_test.ToString();
+                txtE.Text = rsa.E_test.ToString();
+                txtD.Text = rsa.D_test.ToString();
 
-            txtPrivate.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.D_test.ToString());
-            txtPublic.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.E_test.ToString());
+                txtPrivate.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.D_test.ToString());
+                txtPublic.Text = string.Format("({0}, {1})", rsa.N_test.ToString(), rsa.E_test.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnTinhToan_Click(object sender, EventArgs e) // Tạo khóa từ giá trị nhập từ bàn phímm
@@ -90,7 +98,7 @@ namespace DigitalSignarute
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message);
+                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -164,16 +172,16 @@ namespace DigitalSignarute
                 // Hiển thị kết quả xác thực
                 if (isValid)
                 {
-                    MessageBox.Show("Chữ ký số hợp lệ!");
+                    MessageBox.Show("Chữ ký số hợp lệ!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Chữ ký số không hợp lệ!");
+                    MessageBox.Show("Chữ ký số không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi xác thực: " + ex.Message);
+                MessageBox.Show("Lỗi xác thực: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -223,13 +231,35 @@ namespace DigitalSignarute
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi giải mã: " + ex.Message);
+                MessageBox.Show("Lỗi giải mã: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void txtPrivate_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = file.FileName;
+                string fileDuLieu = File.ReadAllText(fileName);
+                txtNhap.Text = fileDuLieu;
+            }
+        }
+
+        private void btnTaiFile_XacMinh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog file = new OpenFileDialog();
+            if (file.ShowDialog() == DialogResult.OK)
+            {
+                string fileName = file.FileName;
+                string fileDuLieu = File.ReadAllText(fileName);
+                txtNhapXacMinh.Text = fileDuLieu;
+            }
         }
     }
 }

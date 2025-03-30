@@ -16,3 +16,12 @@ E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao2\Digi
 E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao2\DigitalSignature\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.csproj.CoreCompileInputs.cache
 E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao2\DigitalSignature\DigitalSignarute\DigitalSignarute\bin\Debug\DigitalSignarute.exe
 E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao2\DigitalSignature\DigitalSignarute\DigitalSignarute\bin\Debug\DigitalSignarute.pdb
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\bin\Debug\DigitalSignarute.exe.config
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\bin\Debug\DigitalSignarute.exe
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\bin\Debug\DigitalSignarute.pdb
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.csproj.AssemblyReference.cache
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.GiaoDien.resources
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.csproj.GenerateResource.cache
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.csproj.CoreCompileInputs.cache
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.exe
+E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.pdb

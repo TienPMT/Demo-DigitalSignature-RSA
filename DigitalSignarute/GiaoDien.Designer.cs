@@ -63,8 +63,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtNhapXacMinh = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnTaiFileGoc = new System.Windows.Forms.Button();
+            this.btnTaiFile_XacMinh = new System.Windows.Forms.Button();
             this.btnBamXacMinh = new System.Windows.Forms.Button();
             this.txtGiaiMaChuKySo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -401,23 +401,25 @@
             this.label16.TabIndex = 33;
             this.label16.Text = "Dữ liệu cần xác minh";
             // 
-            // button2
+            // btnTaiFileGoc
             // 
-            this.button2.Location = new System.Drawing.Point(464, 68);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 33);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "Tải file";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnTaiFileGoc.Location = new System.Drawing.Point(464, 68);
+            this.btnTaiFileGoc.Name = "btnTaiFileGoc";
+            this.btnTaiFileGoc.Size = new System.Drawing.Size(95, 33);
+            this.btnTaiFileGoc.TabIndex = 42;
+            this.btnTaiFileGoc.Text = "Tải file";
+            this.btnTaiFileGoc.UseVisualStyleBackColor = true;
+            this.btnTaiFileGoc.Click += new System.EventHandler(this.Button2_Click);
             // 
-            // button3
+            // btnTaiFile_XacMinh
             // 
-            this.button3.Location = new System.Drawing.Point(957, 68);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 33);
-            this.button3.TabIndex = 43;
-            this.button3.Text = "Tải file";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnTaiFile_XacMinh.Location = new System.Drawing.Point(957, 68);
+            this.btnTaiFile_XacMinh.Name = "btnTaiFile_XacMinh";
+            this.btnTaiFile_XacMinh.Size = new System.Drawing.Size(95, 33);
+            this.btnTaiFile_XacMinh.TabIndex = 43;
+            this.btnTaiFile_XacMinh.Text = "Tải file";
+            this.btnTaiFile_XacMinh.UseVisualStyleBackColor = true;
+            this.btnTaiFile_XacMinh.Click += new System.EventHandler(this.btnTaiFile_XacMinh_Click);
             // 
             // btnBamXacMinh
             // 
@@ -467,8 +469,8 @@
             this.Controls.Add(this.txtGiaiMaChuKySo);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.btnBamXacMinh);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnTaiFile_XacMinh);
+            this.Controls.Add(this.btnTaiFileGoc);
             this.Controls.Add(this.btnXacMinh);
             this.Controls.Add(this.txtChuKySoXacMinh);
             this.Controls.Add(this.label14);
@@ -549,8 +551,8 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNhapXacMinh;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnTaiFileGoc;
+        private System.Windows.Forms.Button btnTaiFile_XacMinh;
         private System.Windows.Forms.Button btnBamXacMinh;
         private System.Windows.Forms.TextBox txtGiaiMaChuKySo;
         private System.Windows.Forms.Label label17;
