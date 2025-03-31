@@ -37,7 +37,7 @@ namespace DigitalSignarute
                 if (!(kt_SoNguyenTo(value))) // Nếu không phải số nguyên tố, throw ra lỗi -> Catch
                     throw new Exception("q không phải số nguyên tố!");
                 if (value == p)
-                     throw new Exception("p và q không được bằng nhau!");
+                    throw new Exception("p và q không được bằng nhau!");
 
                 q = value;
                 TinhToan(); // Cập nhật n và phi(n) mỗi khi p thay đổi

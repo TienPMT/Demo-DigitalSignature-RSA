@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using System.Diagnostics.Tracing;
 
 namespace DigitalSignarute
 {
@@ -187,7 +188,7 @@ namespace DigitalSignarute
 
         private void txtChuKySoXacMinh_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnCopy_Click(object sender, EventArgs e)
@@ -219,7 +220,7 @@ namespace DigitalSignarute
             {
                 if (string.IsNullOrEmpty(inputText))
                 {
-                    MessageBox.Show("Chữ ký số không được để trống!");
+                    MessageBox.Show("Chữ ký số không được để trống!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -260,6 +261,25 @@ namespace DigitalSignarute
                 string fileDuLieu = File.ReadAllText(fileName);
                 txtNhapXacMinh.Text = fileDuLieu;
             }
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            txtP.Text = "";
+            txtQ.Text = "";
+            txtN.Text = "";
+            txtPhiN.Text = "";
+            txtE.Text = "";
+            txtD.Text = "";
+            txtPrivate.Text = "";
+            txtPublic.Text = "";
+            txtNhap.Text = "";
+            txtNhapXacMinh.Text = "";
+            txtBam.Text = "";
+            txtBamXacMinh.Text = "";
+            txtChuKySo.Text = "";
+            txtChuKySoXacMinh.Text = "";
+            txtGiaiMaChuKySo.Text = "";
         }
     }
 }

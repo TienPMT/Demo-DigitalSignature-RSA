@@ -69,6 +69,7 @@
             this.txtGiaiMaChuKySo = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.btnGiaiMa = new System.Windows.Forms.Button();
+            this.btnLamMoi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -460,11 +461,21 @@
             this.btnGiaiMa.UseVisualStyleBackColor = true;
             this.btnGiaiMa.Click += new System.EventHandler(this.btnGiaiMa_Click);
             // 
+            // btnLamMoi
+            // 
+            this.btnLamMoi.Location = new System.Drawing.Point(846, 384);
+            this.btnLamMoi.Name = "btnLamMoi";
+            this.btnLamMoi.Size = new System.Drawing.Size(95, 33);
+            this.btnLamMoi.TabIndex = 48;
+            this.btnLamMoi.Text = "Làm mới";
+            this.btnLamMoi.UseVisualStyleBackColor = true;
+            // 
             // GiaoDien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1247, 443);
+            this.Controls.Add(this.btnLamMoi);
             this.Controls.Add(this.btnGiaiMa);
             this.Controls.Add(this.txtGiaiMaChuKySo);
             this.Controls.Add(this.label17);
@@ -557,5 +568,6 @@
         private System.Windows.Forms.TextBox txtGiaiMaChuKySo;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnGiaiMa;
+        private System.Windows.Forms.Button btnLamMoi;
     }
 }
