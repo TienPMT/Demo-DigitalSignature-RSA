@@ -469,6 +469,7 @@
             this.btnLamMoi.TabIndex = 48;
             this.btnLamMoi.Text = "Làm mới";
             this.btnLamMoi.UseVisualStyleBackColor = true;
+            this.btnLamMoi.Click += new System.EventHandler(this.btnLamMoi_Click_1);
             // 
             // GiaoDien
             // 

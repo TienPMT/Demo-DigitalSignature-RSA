@@ -263,7 +263,7 @@ namespace DigitalSignarute
             }
         }
 
-        private void btnLamMoi_Click(object sender, EventArgs e)
+        private void btnLamMoi_Click_1(object sender, EventArgs e)
         {
             txtP.Text = "";
             txtQ.Text = "";
