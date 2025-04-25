@@ -173,11 +173,11 @@ namespace DigitalSignarute
                 // Hiển thị kết quả xác thực
                 if (isValid)
                 {
-                    MessageBox.Show("Chữ ký số hợp lệ!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Nội dung không bị thay đổi!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Chữ ký số không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Nội dung bị thay đổi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
