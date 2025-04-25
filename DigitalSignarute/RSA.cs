@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Numerics;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
+using System.Xml.Schema;
 
 namespace DigitalSignarute
 {
@@ -16,6 +18,8 @@ namespace DigitalSignarute
         int e, d; // để tạo 2 khóa public và private
         private static Random rand = new Random();
 
+        List<int> lst_SNT = new List<int>();
+        
         public int P_test
         {
             get { return p; }
@@ -59,7 +63,11 @@ namespace DigitalSignarute
         public int D_test
         {
             get { return d; }
-            set { d = value; }
+            set {
+                if (value == e || value < 0)
+                    value += Phi_n_test;
+                d = value; 
+            }
         }
 
         public int E_test
@@ -72,11 +80,12 @@ namespace DigitalSignarute
         // Không tham số (random)
         public RSA()
         {
+            create_lstSoNguyenTo(200);
 
-            P_test = random_SoNguyenTo(20, 100);
+            P_test = random_SoNguyenTo();
             do
             {
-                Q_test = random_SoNguyenTo(20, 100);
+                Q_test = random_SoNguyenTo();
             } while (P_test == Q_test); // Tránh trường hợp P và Q trùng nhau
 
             TinhToan(); // Tính 2 giá trị n và phi(n)
@@ -90,6 +99,8 @@ namespace DigitalSignarute
         // Có tham số (Người dùng nhập vào p và q)
         public RSA(int p, int q)
         {
+            create_lstSoNguyenTo(200);
+
             P_test = p;
             Q_test = q;
 
@@ -107,28 +118,50 @@ namespace DigitalSignarute
         // Hàm kiểm tra số nguyên tố
         private bool kt_SoNguyenTo(int n)
         {
-            if (n < 2) return false;
-            if (n == 2 || n == 3) return true;
-            if (n % 2 == 0) return false;
-
-            for (int i = 3; i <= Math.Sqrt(n); i += 2) // i += 2 bởi vì bỏ qua các trường hợp số chẵn, đã được kiểm tra ở trên
+            if (lst_SNT == null || lst_SNT.Count == 0)
             {
-                if (n % i == 0) return false;
+                throw new Exception("Danh sách số nguyên tố chưa được khởi tạo.");
             }
 
-            return true;
+            for (int i = 0; i < lst_SNT.Count; i++)
+            {
+                if (n == lst_SNT[i])
+                    return true;
+                else
+                    continue;
+            }
+            return false;
         }
 
         // Hàm random số nguyên tố
-        public int random_SoNguyenTo(int min, int max)
+        public void create_lstSoNguyenTo(int n)
         {
-            int result;
-            do
+            // Them phan tu vao mang so nguyen
+            for (int i = 2; i < n; i++)
             {
-                result = rand.Next(min, max);
-            } while (!kt_SoNguyenTo(result));
+                lst_SNT.Add(i);
+            }
 
-            return result;
+            // Kiem tra phan tu do co phai SNT hay khong
+            for (int i = 0; i < lst_SNT.Count; i++)
+            {
+                for (int j = i + 1; j < lst_SNT.Count; j++)
+                {
+                    if (lst_SNT[j] % lst_SNT[i] == 0)
+                    {
+                        lst_SNT.RemoveAt(j);
+                        j--;
+                    }
+                    else continue;
+                }
+            }
+        }
+
+        // Hàm random số nguyên tố
+        public int random_SoNguyenTo()
+        {
+            int result = rand.Next(0, lst_SNT.Count);
+            return lst_SNT[result];
         }
 
         // Tính toán n và phi(n)
@@ -169,7 +202,7 @@ namespace DigitalSignarute
             // Trường hợp các số nguyên tố bên trên không thỏa điều kiện
             do
             {
-                E_test = random_SoNguyenTo(2, Phi_n_test);
+                E_test = random_SoNguyenTo();
             } while (GCD(E_test, Phi_n_test) != 1);
         }
 
@@ -228,7 +261,7 @@ namespace DigitalSignarute
             }
             while (ex != 0);
 
-            // Quá trình lấy dư
+            // Quá trình lấy dư 
             int kq = 1;
             for (int i = k - 1; i >= 0; i--)
             {

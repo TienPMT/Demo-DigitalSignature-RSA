@@ -25,3 +25,12 @@ E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Sourc
 E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.csproj.CoreCompileInputs.cache
 E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.exe
 E:\Desktop\Tiến\HUIT\Năm 2\Học kì 2\2. Bảo mật máy tính\BaoCao\Source_chinh\DigitalSignarute\DigitalSignarute\obj\Debug\DigitalSignarute.pdb
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\obj\Debug\DigitalSignarute.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\obj\Debug\DigitalSignarute.GiaoDien.resources
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\obj\Debug\DigitalSignarute.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\obj\Debug\DigitalSignarute.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\obj\Debug\DigitalSignarute.exe
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\obj\Debug\DigitalSignarute.pdb
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\bin\Debug\DigitalSignarute.exe.config
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\bin\Debug\DigitalSignarute.exe
+C:\Users\Admin\Desktop\Demo-DigitalSignature-RSA-master\DigitalSignarute\bin\Debug\DigitalSignarute.pdb
