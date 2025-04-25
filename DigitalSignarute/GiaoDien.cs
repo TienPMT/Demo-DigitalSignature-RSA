@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.IO;
 using System.Diagnostics.Tracing;
+using System.Diagnostics.Eventing.Reader;
 
 namespace DigitalSignarute
 {
@@ -169,12 +170,20 @@ namespace DigitalSignarute
             {
                 // Xác thực chữ ký số
                 bool isValid = rsa.xacThucChuKy(inputText, digitalSignature);
+                string chukyso_gui = txtChuKySo.Text;
+                string chukyso_nhan = txtChuKySoXacMinh.Text;
 
                 // Hiển thị kết quả xác thực
                 if (isValid)
                 {
                     MessageBox.Show("Nội dung không bị thay đổi!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+
+                else if (chukyso_gui != chukyso_nhan)
+                {
+                    MessageBox.Show("Chữ ký số không hợp lệ!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 else
                 {
                     MessageBox.Show("Nội dung bị thay đổi!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
